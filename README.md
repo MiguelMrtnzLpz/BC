@@ -1,3 +1,6 @@
 # BC
 Repositorio para la asignatura Tecnologías de registro distribuido y blockchain del grupo 2.
 
+Miguel Martínez López.
+Moisés Arribí Lamas.
+
