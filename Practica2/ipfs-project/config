@@ -1,11 +1,20 @@
 {
   "API": {
     "HTTPHeaders": {
+      "AccessControl-Allow-Credentials": [
+        "true"
+      ],
+      "AccessControl-Allow-Headers": [
+        "Authorization",
+        "Content-Type"
+      ],
+      "AccessControl-Allow-Methods": [
+        "PUT",
+        "POST",
+        "GET"
+      ],
       "AccessControl-Allow-Origin": [
-        "http://0.0.0.0:5001",
-        "http://localhost:3000",
-        "http://127.0.0.1:5001",
-        "https://webui.ipfs.io"
+        "*"
       ]
     }
   },

@@ -68,22 +68,31 @@ function App() {
     console.log({ tx });
     setIpfsHash(hash);
   }
-
+  
   const handleSubmit = async (e) => {
+    alert("Upload pulsado");
+
     e.preventDefault();
+
     try {
-      console.log(file)
+      console.log("Entrando a handleSubmit");
+      console.log(file);
+
       // conectar a la instancia en local de ipfs
-      const client = await create('/ip4/0.0.0.0/tcp/5001')
+      const client = await create({
+         url: 'http://127.0.0.1:5001/api/v0'
+      })
+      console.log("Cliente creado");
+      console.log(client);
       // añadir le archivo a ipfs
       const result = await client.add(file)
       // añadir al fs del nodo ipfs en local para poder visualizarlo en el dashboard
-      await client.files.cp(`/ipfs/${result.cid}`, `/${result.cid}`)
+      // await client.files.cp(`/ipfs/${result.cid}`, `/${result.cid}`)
       console.log(result.cid)
       // añadir el CID de ipfs a ethereum a traves del smart contract
       await setFileIPFS(result.cid.toString());
     } catch (error) {
-      console.log(error.message);
+      console.error("ERROR COMPLETO:", error);
     }
   };
 
