@@ -70,7 +70,6 @@ function App() {
   }
   
   const handleSubmit = async (e) => {
-    alert("Upload pulsado");
 
     e.preventDefault();
 
