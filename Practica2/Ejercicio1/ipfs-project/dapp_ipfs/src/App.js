@@ -52,15 +52,15 @@ function App() {
 
   let [connected, setConnected] = useState(false);
   const [file, setFile] = useState(null);
-/*****
-  useEffect(() => {
-    async function readFile() {
-      const file = await readCurrentUserFile();
-      if (file !== ZERO_ADDRESS) setIpfsHash(file);
-    }
-    readFile();
-  }, []);
-*****/
+  /*****
+    useEffect(() => {
+      async function readFile() {
+        const file = await readCurrentUserFile();
+        if (file !== ZERO_ADDRESS) setIpfsHash(file);
+      }
+      readFile();
+    }, []);
+  *****/
   async function setFileIPFS(hash) {
     const ipfsWithSigner = ipfsContract.connect(defaultProvider.getSigner());
     console.log("TX contract");
@@ -68,7 +68,7 @@ function App() {
     console.log({ tx });
     setIpfsHash(hash);
   }
-  
+
   const handleSubmit = async (e) => {
 
     e.preventDefault();
@@ -79,7 +79,7 @@ function App() {
 
       // conectar a la instancia en local de ipfs
       const client = await create({
-         url: 'http://127.0.0.1:5001/api/v0'
+        url: 'http://127.0.0.1:5001/api/v0'
       })
       console.log("Cliente creado");
       console.log(client);
@@ -108,7 +108,7 @@ function App() {
   }
 
   return (
-      <div className="App">
+    <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
